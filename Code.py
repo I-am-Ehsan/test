@@ -91,6 +91,8 @@ for i in range (0,5):
 for i in range (0,5):
     print(arr[i][4-i])
 """
+
+
 """
 #Checking the braces combination that if we have three pair of braces then how many combinations we can make from it
 def BracketCombinations(num):
@@ -99,11 +101,11 @@ def BracketCombinations(num):
   # keep this function call here
 print(BracketCombinations(3))
   
-  """
+"""
   
   
-  """
-  #Bracket Matching 
+"""
+#Bracket Matching 
 inputstring=input("Enter the string:")
 arr=[]
 for i in range (0,len(inputstring)):
@@ -147,9 +149,52 @@ for i in range (0, 5):
 #Reverse using args & coargs
 def reverse(*args):
     for i in range (0, len(args[0])):
-        print(args[0][len(args[0])-i-1])
-    
-    
-    
+        print(args[0][len(args[0])-i-1]) 
 reverse("FBC")
+"""
+
+"""
+dic=[
+    {
+        "Code": "A00",
+        "is_covered": True #0
+    },
+    {
+        "Code": "A001",
+        "is_covered": False #1
+    },
+    {
+        "Code": "A01",
+        "is_covered": True #0
+    },
+    {
+        "Code": "A010",
+        "is_covered": True #0
+    },
+    {
+        "Code": "A011",
+        "is_covered": False #1
+    },
+    {
+        "Code": "A0101",
+        "is_covered": False #1
+    }
+    ]
+new_dic=[]
+most_long_code=""
+for i in range(0, len(dic)):
+    if (dic[i]["is_covered"]==True):
+        dic[i]["Code_Category"]=dic[i]["Code"]
+        new_dic.append(dic[i]["Code"])
+    else:
+        for j in range (0, len(new_dic)):
+            print(new_dic[j])
+            print(dic[i]["Code"])
+            if (new_dic[j] in dic[i]["Code"]) and len(new_dic[j])>len(most_long_code):
+                most_long_dic=new_dic[j]
+        dic[i]["Code_Category"]=most_long_dic
+        most_long_dic="Not Matched with any one"
+for i in range(0, len(dic)):
+    print(dic[i])
+    print("\n")
 """
